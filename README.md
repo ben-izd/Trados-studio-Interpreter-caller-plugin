@@ -243,7 +243,7 @@ Before running your code, monkey patch sys.argv and run your script multiple tim
  
 ### Snippet 2
 
-Use following code to show your message in the middle of batch task while not interupting the script:
+Use the following code to show your message in the middle of batch task while not interupting the script:
 First install new windows terminal developed by microsoft because it supports UTF-8 encoding from [windows store](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701).
 then use this code in your script:
 
