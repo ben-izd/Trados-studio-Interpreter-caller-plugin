@@ -16,22 +16,31 @@ Just download above file and copy <kbd>.sdlplugin</kbd> file to
 
 To show the plugin workflow I use a simple translation file like below:
 
-![](https://img.imageupload.net/2020/11/11/5.png)
+<!-- 5.png -->
+![image](https://user-images.githubusercontent.com/56647066/173573988-7b06acbc-c468-4967-9c5a-bcd6fd174518.png)
+
+
 
 Trados studio automatically split a file into diffrent parts called segments. Each segment has some property:
 
-![](https://img.imageupload.net/2020/11/11/2.jpg)
+<!-- 2.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574037-fcfd9007-0579-4690-b981-0a1aa4a2b701.png)
+
 
 Plugin will get a interpreter and file_script path and call each of these properties as argument like:
 
-![](https://img.imageupload.net/2020/11/11/3.jpg)
+<!-- 3.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574066-adb8dd76-5e94-4987-b0f4-01e2956f4100.png)
+
 
 and base on given settings may use the returned text as <code>Segment Source **(2)**</code> or <code>Segment Translation **(3)**</code> or <code>Segment Status **(4)**</code>
 
 ----------
 ## Plugin Interface
 
-![](https://img.imageupload.net/2020/11/11/15.jpg)
+<!-- 15.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574102-ca31768e-f2f9-4e71-900f-b10d4fe27c0f.png)
+
 
 **(1)** -> Interpreter path for languages if you install them on the defualt location:
 > python:
@@ -50,7 +59,9 @@ there are 3 diffrent options:
 2. Segment Source
 3. Segment Status: should be return status text (case-insensitive) or status index according to this (see example 2):
 
-![](https://i.postimg.cc/CMQGjHyY/1.jpg)
+<!-- 1.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574137-65658948-a0d2-4df5-b137-50a6e8fd868a.png)
+
 
 **(4-1)** -> Do you want to after running the script, it changes the effected segments status (also remember if you change **(3-2)** item to "Segment status" you can't use this part)
 **(4-2)** -> If yes then change it to which status
@@ -114,11 +125,15 @@ and this is a template for your python debug script:
 
 In this example I write code below in <code>my_file.py</code>. This code return segment source:
 
-![](https://img.imageupload.net/2020/11/11/13.jpg)
+<!-- 13.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574181-12f4b052-e94c-4070-8181-bd4b6ea23fa3.png)
+
 
 and config for plugin is:
 
-![](https://img.imageupload.net/2020/11/11/10.jpg)
+<!-- 10.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574205-f87f32ac-833b-48c0-8f3e-dd25c2c71ac5.png)
+
 
 This config means insert the return text (which is segment source) from script to every segment that don't have translation (like copy source to translation but treat tag structures as text).
 
@@ -128,7 +143,9 @@ This config means insert the return text (which is segment source) from script t
 
 and the result:
 
-![](https://img.imageupload.net/2020/11/11/14.jpg)
+<!-- 14.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574231-0beca253-e1ba-484e-b7a9-ebbe78123bc5.png)
+
 
 ### Warning:
 
@@ -139,7 +156,9 @@ Just like segment 2 in this example, tags will not work as you passed them as re
 In this example we apply one line code to our first sample project.
 config:
 
-![](https://i.postimg.cc/6pdCJk85/20.jpg)
+<!-- 20.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574247-37f5e1f6-7027-4d96-9cea-db6b3b43e9de.png)
+
 
 <code>my_file.py</code> contains following code:
 
@@ -150,7 +169,9 @@ config:
 	
 result:
 
-![](https://i.postimg.cc/hPQ9Mzgm/21.jpg)
+<!-- 21.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574290-61211110-8250-44a9-80f8-ff0e789a84a1.png)
+
 
 changes all segments to "Translated" status.
 
@@ -163,11 +184,15 @@ For this example we will use julia language script.
 
 config:
 
-![](https://i.postimg.cc/3wYmKtGj/22.jpg)
+<!-- 22.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574313-dda83028-bad1-474d-9909-5e4a4b78db3d.png)
+
 
 result:
 
-![](https://i.postimg.cc/nh8qWFcP/24.jpg)
+<!-- 24.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574335-2df73ad4-7edb-4883-94bd-e4e920e759f9.png)
+
 
 Just like Example 1, it will copy source to target (treating tag structures as text).
 
@@ -177,7 +202,9 @@ This is a diffrent usage, in this example I create a report in html containing s
 
 Plugin config:
 
-![](https://img.imageupload.net/2020/11/11/19.jpg)
+<!-- 19.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574363-51e1b0d0-ec82-4c08-9f70-5902eade0ae8.png)
+
 
 <code>D:\my_file.py</code> contains following code:
 
@@ -208,7 +235,9 @@ Plugin config:
 
 result:
 
-![](https://img.imageupload.net/2020/11/11/17.jpg)
+<!-- 17.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574387-cfd50edd-2aee-4e68-a211-3214c77cbd11.png)
+
 
 ### Under the hood
 
@@ -256,6 +285,8 @@ then use this code in your script:
 	
 result:
 
-![](https://img.imageupload.net/2020/11/11/18.jpg)
+<!-- 18.jpg -->
+![image](https://user-images.githubusercontent.com/56647066/173574428-81e1dca8-2efc-41f0-a352-cbd8d27d4f6e.png)
+
 
 Because new windows terminal has no start command option, I intentionally use this code to cause an error while showing our message 😬.
