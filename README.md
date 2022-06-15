@@ -8,9 +8,13 @@ This plugin is a batch task plugin for trados studio that help you to use other 
 You can access the source code in [this repository](https://github.com/beny74483/Trados_studio_Interpreter_caller_source).
 
 ## Installation
-Just download above file and copy <kbd>.sdlplugin</kbd> file to
+Download and copy <kbd>[Interpreter_Caller_2021.sdlplugin](https://github.com/ben-izd/Trados-studio-Interpreter-caller-plugin/blob/49c486e5f9acf4003cdce0c74110e451b16099ef/Interpreter_Caller_2021.sdlplugin)</kbd> file for version 2021+ to
 
 	C:\Users\YOUR_USER_NAME\AppData\Roaming\SDL\SDL Trados Studio\16\Plugins\Packages
+
+Or <kbd>[Interpreter_Caller_2019.sdlplugin](https://github.com/ben-izd/Trados-studio-Interpreter-caller-plugin/blob/49c486e5f9acf4003cdce0c74110e451b16099ef/Interpreter_Caller_2019.sdlplugin)</kbd> file for version 2019 to
+
+	C:\Users\YOUR_USER_NAME\AppData\Roaming\SDL\SDL Trados Studio\15\Plugins\Packages
 
 ## How it works?
 
