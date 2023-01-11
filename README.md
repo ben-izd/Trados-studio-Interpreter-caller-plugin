@@ -1,18 +1,25 @@
 # Trados Studio Interpreter Caller
 
-This plugin is a batch task plugin for trados studio that help you to use other languages like python, julia, R and other interpreting languages to manipulate translation segments.
+This plugin is a batch task plugin for trados studio that help you to use other languages like `Python`, `Julia`, `R` and other interpreting languages to manipulate translation segments.
 
-> The Batch task was compiled with Trandos Studio 2021 SDK and all the examples shown below used Trados Studio 2021.
+> All the examples shown below used Trados Studio 2021.
 > You may recieve error for using previous versions of Trados Studio.
 
 You can access the source code in [this repository](https://github.com/beny74483/Trados_studio_Interpreter_caller_source).
 
 ## Installation
-Download and copy <kbd>[Interpreter_Caller_2021.sdlplugin](https://github.com/ben-izd/Trados-studio-Interpreter-caller-plugin/blob/49c486e5f9acf4003cdce0c74110e451b16099ef/Interpreter_Caller_2021.sdlplugin)</kbd> file for version 2021+ to
+### Trados Studio 2022
+Download and either double click on <kbd>[Interpreter_Caller_2022.sdlplugin](https://github.com/ben-izd/Trados-studio-Interpreter-caller-plugin/blob/4605175124dd322bd403d834e7703e918c5d51cd/Interpreter_Caller_2022.sdlplugin)</kbd> to install it automatically or copy the file to
+
+	C:\Users\YOUR_USER_NAME\AppData\Roaming\Trados\Trados Studio\17\Plugins\Packages
+
+### Trados Studio 2021
+Copy <kbd>[Interpreter_Caller_2021.sdlplugin](https://github.com/ben-izd/Trados-studio-Interpreter-caller-plugin/blob/4605175124dd322bd403d834e7703e918c5d51cd/Interpreter_Caller_2021.sdlplugin)</kbd> file to
 
 	C:\Users\YOUR_USER_NAME\AppData\Roaming\SDL\SDL Trados Studio\16\Plugins\Packages
-
-Or <kbd>[Interpreter_Caller_2019.sdlplugin](https://github.com/ben-izd/Trados-studio-Interpreter-caller-plugin/blob/49c486e5f9acf4003cdce0c74110e451b16099ef/Interpreter_Caller_2019.sdlplugin)</kbd> file for version 2019 to
+	
+### Trados Studio 2019
+Copy <kbd>[Interpreter_Caller_2019.sdlplugin](https://github.com/ben-izd/Trados-studio-Interpreter-caller-plugin/blob/49c486e5f9acf4003cdce0c74110e451b16099ef/Interpreter_Caller_2019.sdlplugin)</kbd> file to
 
 	C:\Users\YOUR_USER_NAME\AppData\Roaming\SDL\SDL Trados Studio\15\Plugins\Packages
 
@@ -21,20 +28,20 @@ Or <kbd>[Interpreter_Caller_2019.sdlplugin](https://github.com/ben-izd/Trados-st
 To show the plugin workflow I use a simple translation file like below:
 
 <!-- 5.png -->
-![image](https://user-images.githubusercontent.com/56647066/173573988-7b06acbc-c468-4967-9c5a-bcd6fd174518.png)
-
+![image](https://user-images.githubusercontent.com/56647066/211738252-959a36cc-f1e5-4d25-bee5-136f3accd8bf.jpg)
 
 
 Trados studio automatically split a file into diffrent parts called segments. Each segment has some property:
 
 <!-- 2.jpg -->
-![image](https://user-images.githubusercontent.com/56647066/173574037-fcfd9007-0579-4690-b981-0a1aa4a2b701.png)
+![image](https://user-images.githubusercontent.com/56647066/211738455-71437b4d-ea61-4a1a-8070-1169681626ec.jpg)
+
 
 
 Plugin will get a interpreter and file_script path and call each of these properties as argument like:
 
 <!-- 3.jpg -->
-![image](https://user-images.githubusercontent.com/56647066/173574066-adb8dd76-5e94-4987-b0f4-01e2956f4100.png)
+![image](https://user-images.githubusercontent.com/56647066/211738491-6d2e9b4b-7c5c-49fb-90ea-f81800332d9b.jpg)
 
 
 and base on given settings may use the returned text as <code>Segment Source **(2)**</code> or <code>Segment Translation **(3)**</code> or <code>Segment Status **(4)**</code>
@@ -43,8 +50,7 @@ and base on given settings may use the returned text as <code>Segment Source **(
 ## Plugin Interface
 
 <!-- 15.jpg -->
-![image](https://user-images.githubusercontent.com/56647066/173574102-ca31768e-f2f9-4e71-900f-b10d4fe27c0f.png)
-
+![image](https://user-images.githubusercontent.com/56647066/211738661-cfcf6e77-4281-467b-a7b7-e1ffe9cf1def.jpg)
 
 **(1)** -> Interpreter path for languages if you install them on the defualt location:
 > python:
@@ -64,7 +70,7 @@ there are 3 diffrent options:
 3. Segment Status: should be return status text (case-insensitive) or status index according to this (see example 2):
 
 <!-- 1.jpg -->
-![image](https://user-images.githubusercontent.com/56647066/173574137-65658948-a0d2-4df5-b137-50a6e8fd868a.png)
+![image](https://user-images.githubusercontent.com/56647066/211738818-e8f175f1-d5e6-4cc5-a63c-24f44f151ea8.jpg)
 
 
 **(4-1)** -> Do you want to after running the script, it changes the effected segments status (also remember if you change **(3-2)** item to "Segment status" you can't use this part)
